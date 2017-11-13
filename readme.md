@@ -22,3 +22,10 @@ integrate with other backend services just like any other web applications.
 	Using a browser extension lets you cut out the middle-men: replace selenium & backend server.
 	Saving data in local storage lets your data persist offline, still allowing CSV download or database upload.
 	Result: Does More With Less Code.
+
+## Setup
+clone this repository.
+Add jquery and jquery datatables plugin (Js and css) to a libs/ folder. Look at the script tags in he frontend html files if you aren't sure where they belong. 
+In chrome, open settings -> more tools -> extensions. Check the "Devloper mode" box. Click "load unpacked extension". Select the folder of the cloned repository.
+Make sure the extension loads and is enabled. You should see an icon for the extension in the toolbar. To run, click the toolbar icon. You can also navigate directly to 
+chrome:extension/extension-id/ + the directory of the page you want to view. This was tested ONLY with the latest edition of chrome.

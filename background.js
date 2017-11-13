@@ -28,7 +28,7 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 	}  else if (request.greeting == "scrape") {
 		urls = request.links;
 		chrome.windows.create({ url: urls }, function(win) {
-       		chrome.windows.update(win.id, { focused: false });
-    	});
+      chrome.windows.update(win.id, { focused: false });
+    });
 	}
 });
