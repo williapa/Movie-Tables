@@ -16,9 +16,9 @@ integrate with other backend services just like any other web applications.
 	Scraping approaches using selenium are different from your browser's user experience. With Selenium, you write instructions selenium 
 	server interprets and sends to the browser, sometimes not running on the same hardware. Lots of work done just to pass messages along. A chrome extension
 	lets you perform automation with your browser, your permissions, as if it was really you - beneficial for authentication purposes. 
-	Don't worry about having to put your password or some hack that introduces security vulnerabilities. 
+	Don't worry about having to put your password or dubious security hacks into your scripts. 
 
 3) Does More With Less Code.
-	Using a browser extension lets you cut out the middle-men: replace selenium & backend server
+	Using a browser extension lets you cut out the middle-men: replace selenium & backend server.
 	Saving data in local storage lets your data persist offline, still allowing CSV download or database upload.
-	Result: Does More With Less Code
+	Result: Does More With Less Code.
