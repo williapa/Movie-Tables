@@ -1,12 +1,12 @@
-#Movie Tables
+# Movie Tables
 
-##About
+## About
 
 Movie tables is a web scraping chrome extension that allows you to specify data-scraping scripts to inject into pages. The data is saved
 to the browser's local storage to be aggregated and presented by a single page application, also served by the chrome extension. Extensions can
 integrate with other backend services just like any other web applications.
 
-##Advantages
+## Advantages
 
 1) Reduced Network Dependency. 
 	Network is only needed for scraping. All other assets (js, css, html, data storage) live as static resources inside your browser. Installation
