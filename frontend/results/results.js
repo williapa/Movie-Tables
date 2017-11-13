@@ -1,10 +1,15 @@
 $(function(){
-	var dataTable;
+	var dataTable,
+		tr = "<tr><td>",
+		tre = "</td></tr>",
+		td = "</td><td>",
+		rn = "\r\n",
+		setup = "chrome-extension://moimboceefbncokpfbkckbhmdooggkhc/frontend/setup/setup.html";
+
 	function allStorage() {
 	    var values = [],
 	        keys = Object.keys(localStorage),
 	        i = keys.length;
-
 	    while ( i-- ) {
 	        values.push( JSON.parse(localStorage.getItem(keys[i])) );
 	    }
@@ -16,29 +21,30 @@ $(function(){
 		i = keys.length;
 		while( i -- ) {
 			var appearances = actors[keys[i]].length;
-			var row = "<tr><td>" + keys[i] + "</td><td>" + appearances + "</td></tr>";
+			var row = tr + keys[i] + td + appearances + tre;
 			$("#appearances table tbody").append(row);
 		}
 	}
 
-	function buildMovieRow(title, year) {
-		return "<tr><td>" + $.trim(title) + "</td><td>" + year + "</td></tr>";
+	function buildMovieRow(title, rating, year) {
+		return tr + $.trim(title) + td + rating + td + year + tre
 	}
 
 	function buildActorRow(actor, name, movie) {
-		return "<tr><td>" + actor  + "</td><td>" + name + "</td><td>" + movie + "</td></tr>";
+		return tr + actor + td + name + td + movie + tre;
 	}
 
-	var storageItems = allStorage();
-	var m = [];
-	var movies = "";
-	var actors = {};
-	var actorArray = [];
+	var storageItems = allStorage(),
+	    m = [],
+	    movies = "",
+	    actors = {},
+	    actorArray = [];
+
 	for(var i = 0; i <  storageItems.length; i++) {
 		var item = storageItems[i];
 		console.log(item);
 		m.push({title: item.title, year: item.year});
-		movies = movies + buildMovieRow(item.title, item.year);
+		movies = movies + buildMovieRow(item.title, item.rating, item.year);
 		var actorRow = "";
 		for(var j = 0; j < item.actors.length; j++) {
 			if(actors[item.actors[j]] == undefined) {
@@ -56,7 +62,9 @@ $(function(){
 	funct(actors);
 
 	$(".tablinks").click(function(evt) {
-		if(evt.target.getAttribute("data-attr-tab") !== "popup") {
+		if($(evt.target).hasClass("bts")) {
+			return;
+		} else if(evt.target.getAttribute("data-attr-tab") !== "popup") {
 			openTab(evt, evt.target.getAttribute("data-attr-tab"));
 		}
 	});
@@ -67,20 +75,20 @@ $(function(){
 		var csvString = "data:text/csv;charset=utf-8,";
 		if(id == "appearances") {
 			var keys = Object.keys(actors);
-			csvString = csvString + "Actors,Appearances\r\n";
+			csvString = csvString + "Actors,Appearances" + rn;
 			for(var i = 0; i < keys.length; i++) {
-				csvString = csvString + keys[i] + "," + actors[keys[i]].length + "\r\n";
+				csvString = csvString + keys[i] + "," + actors[keys[i]].length + rn;
 			}
 		} else if (id == "movies") {
-			csvString = csvString + "Title,Year\r\n";
+			csvString = csvString + "Title,Year" + rn;
 			for(var i = 0; i < storageItems.length; i++) {
-				csvString = csvString + storageItems[i].title + "," + storageItems[i].year + "\r\n";
+				csvString = csvString + storageItems[i].title + "," +  storageItems[i].rating + "," + storageItems[i].year + rn;
 			}
 		} else {
-			csvString = csvString + "Actor,Name,Movie\r\n";
+			csvString = csvString + "Actor,Name,Movie" + rn;
 			for(var i = 0; i < actorArray.length; i++) {
 				var act = actorArray[i];
-				csvString = csvString + act.actor + "," + act.name + "," + act.title + "\r\n";
+				csvString = csvString + act.actor + "," + act.name + "," + act.title + rn;
 			}
 		}
 		console.log("csv string: ", csvString);
@@ -92,7 +100,7 @@ $(function(){
 		link.click(); 
 	})
 
-	document.getElementById("movies").click();
+	$("#movies").click();
 
 	function openTab(evt, tabName) {
     	// Declare all variables

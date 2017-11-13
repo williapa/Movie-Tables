@@ -6,7 +6,7 @@ div.tab {
 }
 
 /* Style the buttons inside the tab */
-div.tab button {
+div.tab button, div.tab a {
     background-color: inherit;
     float: left;
     border: none;

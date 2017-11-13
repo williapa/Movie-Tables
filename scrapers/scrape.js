@@ -9,4 +9,5 @@ document.querySelectorAll("#titleCast td.character").forEach(function(item) {
 });
 it.title = $(".title_wrapper h1").text();
 it.year = $("#titleYear").text();
+it.rating = $("[itemprop='ratingValue']").text();
 chrome.runtime.sendMessage({item: it});

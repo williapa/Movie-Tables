@@ -1,9 +1,9 @@
 var urls = [],
     closed = 0,
-    chromeExtensionUrl = "chrome-extension://moimboceefbncokpfbkckbhmdooggkhc/page/page.html";
+    chromeExtensionUrl = "chrome-extension://moimboceefbncokpfbkckbhmdooggkhc/frontend/results/results.html";
 
 chrome.browserAction.onClicked.addListener(function(tab) {
-	chrome.windows.create({url:"popup.html", type: "popup"/*, state: "fullscreen"*/});
+	chrome.windows.create({url:"frontend/setup/setup.html", type: "popup"/*, state: "fullscreen"*/});
 });
 
 function onItem(item, sender, sendResponse) {

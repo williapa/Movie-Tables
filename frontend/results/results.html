@@ -1,20 +1,20 @@
 <html>
 <head>
 <title> Movie Tables - View Results </title>
-<script src="../jquery-3.2.1.js"></script>
-<link rel="stylesheet" type="text/css" href="../datatables.min.css"/>
-<script type="text/javascript" src="../datatables.min.js"></script>
-<script src="page.js"></script>
-<link rel="stylesheet" type="text/css" href="page.css"/>
+<script src="../../libs/jquery-3.2.1.js"></script>
+<link rel="stylesheet" type="text/css" href="../../libs/datatables.min.css"/>
+<script type="text/javascript" src="../../libs/datatables.min.js"></script>
+<script src="results.js"></script>
+<link rel="stylesheet" type="text/css" href="results.css"/>
 </head>
 <body>
 <h1> Results </h1>
 <p> click tabs to see results. Your data is saved if you close the window. </p>
 <div class="tab">
-  <button class="tablinks" data-attr-tab='movies'>Movies</button>
-  <button class="tablinks" data-attr-tab='actors'>Actors</button>
-  <button class="tablinks" data-attr-tab='appearances'>Appearances</button>
-  <button class="tablinks"> <a href="chrome-extension://moimboceefbncokpfbkckbhmdooggkhc/popup.html"> Back To Scan </a></button>
+  <button class="tablinks rl" data-attr-tab='movies'>Movies</button>
+  <button class="tablinks rl" data-attr-tab='actors'>Actors</button>
+  <button class="tablinks rl" data-attr-tab='appearances'>Appearances</button>
+  <a href="chrome-extension://moimboceefbncokpfbkckbhmdooggkhc/frontend/setup/setup.html" class="tablinks bts"> Back To Scan </a>
 </div>
 
 <div id="movies" class="tabcontent">
@@ -24,7 +24,7 @@
 	
 	<table>
 		<thead>
-		<tr><th> Title </th> <th> Year </th></tr>
+		<tr><th> Title </th> <th> Rating </th> <th> Year </th></tr>
 		</thead>
 		<tbody>
 		</tbody>

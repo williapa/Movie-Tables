@@ -4,12 +4,12 @@
   "manifest_version": 2,
   "description": "Movie Tables",
   "background": {
-    "scripts": ["jquery-3.2.1.js", "background.js"]
+    "scripts": ["libs/jquery-3.2.1.js", "background.js"]
   },
   "content_scripts": [
     {
       "matches": ["http://www.imdb.com/title/*"],
-      "js": ["jquery-3.2.1.js", "scrape.js"],
+      "js": ["libs/jquery-3.2.1.js", "scrapers/scrape.js"],
       "run_at": "document_end"
     }
   ],
