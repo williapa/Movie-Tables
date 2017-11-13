@@ -1,0 +1,60 @@
+<html>
+<head>
+<title> Movie Tables - View Results </title>
+<script src="../jquery-3.2.1.js"></script>
+<link rel="stylesheet" type="text/css" href="../datatables.min.css"/>
+<script type="text/javascript" src="../datatables.min.js"></script>
+<script src="page.js"></script>
+<link rel="stylesheet" type="text/css" href="page.css"/>
+</head>
+<body>
+<h1> Results </h1>
+<p> click tabs to see results. Your data is saved if you close the window. </p>
+<div class="tab">
+  <button class="tablinks" data-attr-tab='movies'>Movies</button>
+  <button class="tablinks" data-attr-tab='actors'>Actors</button>
+  <button class="tablinks" data-attr-tab='appearances'>Appearances</button>
+  <button class="tablinks"> <a href="chrome-extension://moimboceefbncokpfbkckbhmdooggkhc/popup.html"> Back To Scan </a></button>
+</div>
+
+<div id="movies" class="tabcontent">
+	<h2> Movies 
+		<button class="download"> download </button>
+	</h2>
+	
+	<table>
+		<thead>
+		<tr><th> Title </th> <th> Year </th></tr>
+		</thead>
+		<tbody>
+		</tbody>
+	</table>
+</div>
+<div id="actors" class='tabcontent'>
+	<h2> Actors 
+		<button class="download"> download </button>
+	</h2>
+	
+	<table>
+		<thead>
+		<tr><th> Actor </th> <th> Name </th> <th> Movie </th></tr>
+		</thead>
+		<tbody>
+		</tbody>
+	</table>
+</div>
+<div id="appearances" class='tabcontent'>
+	<h2> Appearances
+		<button class="download"> download </button>
+	</h2>
+	
+	<table>
+		<thead>
+		<tr><th> Actor </th> <th> Appearances </th> </tr>
+		</thead>
+		<tbody>
+		</tbody>
+	</table>
+</div>
+</body>
+</html>

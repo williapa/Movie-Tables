@@ -1,0 +1,23 @@
+{
+  "name": "Movie Tables",
+  "version": "1.0",
+  "manifest_version": 2,
+  "description": "Movie Tables",
+  "background": {
+    "scripts": ["jquery-3.2.1.js", "background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://www.imdb.com/title/*"],
+      "js": ["jquery-3.2.1.js", "scrape.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "browser_action": {
+    "default_title": "Movie Tables"
+  },
+  "permissions": [
+    "tabs",
+    "storage"
+  ]
+}
